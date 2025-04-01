@@ -1,0 +1,16 @@
+I first tried opening the data set using this string of code to see how the data will come out. 
+
+SELECT * 
+FROM ic_order_products_curr AS curr
+FULL JOIN ic_order_products_prior AS prior
+ON curr.order_id = prior.order_id
+FULL JOIN ic_products AS prod
+ON prior.product_id = prod.product_id
+FULL JOIN ic_departments AS dep
+ON prod.department_id = dep.department_id
+FULL JOIN ic_aisles AS ais
+ON prod.aisle_id = ais.aisle_id
+
+Before I continue, I want to preface that I was using a Lenovo Slim 7 Carbon laptop. By not selecting specific things that I wanted to see, my laptop ended up becoming extremely slow trying while trying to run this string of code (which is wrong to begin with).
+
+The output returned a lot of null cells and I was unable to see the entire output due to the limitations of my laptop.
