@@ -1,0 +1,16 @@
+First notable change that I did was switching the tables in the FROM so that I can properly JOIN all the tables without returning and NULL values.
+
+SELECT *
+FROM ic_products AS prod
+JOIN ic_order_products_prior AS prio
+ON prod.product_id = prio.product_id
+JOIN ic_order_products_curr AS curr
+ON prod.product_id = curr.product_id
+JOIN ic_departments AS dep
+ON prod.department_id = dep.department_id
+JOIN ic_aisles AS ais
+ON prod.aisle_id = ais.aisle_id
+ORDER BY product_name, department
+
+The table that ended up showing was significantly better, and I even added in an ORDER BY for an even cleaner output. Although it resulted in a cleaner output, it ended up showing every individual item and product.
+
